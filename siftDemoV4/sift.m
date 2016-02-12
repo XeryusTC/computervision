@@ -40,12 +40,12 @@ fclose(f);
 
 % Call keypoints executable
 if isunix
-    command = '!./sift ';
+    command = './sift ';
 else
     command = '!siftWin32 ';
 end
 command = [command ' <tmp.pgm >tmp.key'];
-eval(command);
+system(command);
 
 % Open tmp.key and check its header
 g = fopen('tmp.key', 'r');
